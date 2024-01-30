@@ -17,7 +17,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        paragraphViewModel = ViewModelProvider(this).get(ParagraphViewModel::class.java)
 
+        paragraphViewModel.randomTextOne.observe(this) { randomText ->
+            binding.tvOne.text = randomText
+        }
+        paragraphViewModel.randomTextTwo.observe(this) { randomText ->
+            binding.tvTwo.text = randomText
+        }
 
     }
 }
