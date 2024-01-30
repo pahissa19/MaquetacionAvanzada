@@ -2,7 +2,6 @@ package com.course.ejercicio6maquetacion
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.course.ejercicio6maquetacion.Paragraph.ParagraphViewModel
 import com.course.ejercicio6maquetacion.databinding.ActivityMainBinding

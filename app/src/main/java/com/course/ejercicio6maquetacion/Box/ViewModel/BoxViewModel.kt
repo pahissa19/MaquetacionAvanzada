@@ -1,8 +1,9 @@
-package com.course.ejercicio6maquetacion.Box
+package com.course.ejercicio6maquetacion.Box.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.course.ejercicio6maquetacion.Box.Model.Element
 import com.course.ejercicio6maquetacion.R
 import kotlin.random.Random
 
