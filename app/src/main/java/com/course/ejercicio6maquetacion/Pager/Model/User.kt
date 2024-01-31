@@ -1,4 +1,4 @@
-package com.course.ejercicio6maquetacion.Pager
+package com.course.ejercicio6maquetacion.Pager.Model
 
 data class User(
     val imageResId: Int,

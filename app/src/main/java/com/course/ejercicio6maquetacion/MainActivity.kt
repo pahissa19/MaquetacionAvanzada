@@ -3,8 +3,8 @@ package com.course.ejercicio6maquetacion
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import com.course.ejercicio6maquetacion.Pager.UserAdapter
-import com.course.ejercicio6maquetacion.Pager.UserViewModel
+import com.course.ejercicio6maquetacion.Pager.Adapter.UserAdapter
+import com.course.ejercicio6maquetacion.Pager.ViewModel.UserViewModel
 import com.course.ejercicio6maquetacion.Paragraph.ParagraphViewModel
 import com.course.ejercicio6maquetacion.databinding.ActivityMainBinding
 

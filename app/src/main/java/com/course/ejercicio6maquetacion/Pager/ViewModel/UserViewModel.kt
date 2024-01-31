@@ -1,6 +1,7 @@
-package com.course.ejercicio6maquetacion.Pager
+package com.course.ejercicio6maquetacion.Pager.ViewModel
 
 import androidx.lifecycle.ViewModel
+import com.course.ejercicio6maquetacion.Pager.Model.User
 
 import com.course.ejercicio6maquetacion.R
 

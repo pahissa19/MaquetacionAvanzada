@@ -1,8 +1,10 @@
-package com.course.ejercicio6maquetacion.Pager
+package com.course.ejercicio6maquetacion.Pager.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.course.ejercicio6maquetacion.Pager.Model.User
+import com.course.ejercicio6maquetacion.Pager.ViewModel.UserViewHolder
 import com.course.ejercicio6maquetacion.R
 
 class UserAdapter(private val userList: List<User>) : RecyclerView.Adapter<UserViewHolder>() {
