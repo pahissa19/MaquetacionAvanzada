@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:textSize="18sp"
+            android:layout_marginStart="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvOne"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle"
@@ -53,7 +54,19 @@
             app:barrierDirection="bottom"
             app:constraint_referenced_ids="tvOne,tvTwo" />
 
+        <Button
+            android:id="@+id/btnRandom"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="New Text"
+            android:textColor="@color/blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barrier">
 
+        </Button>
 
         <ImageView
             android:id="@+id/imageView"
@@ -63,7 +76,7 @@
             android:src="@drawable/image_ej6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/btnRandom"
             android:importantForAccessibility="no" />
 
         <androidx.fragment.app.FragmentContainerView
@@ -91,6 +104,7 @@
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
             app:constraint_referenced_ids="viewPager" />
+
         <TextView
             android:id="@+id/paragraph1"
             android:layout_width="50dp"
@@ -100,7 +114,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/barrierText" />
-
 
         <TextView
             android:id="@+id/paragraph2"
@@ -121,6 +134,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/paragraph2"
             app:layout_constraintTop_toBottomOf="@+id/barrierText" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="paragraph1,paragraph2,paragraph3" />
+
+        <Button
+            android:id="@+id/btnRandomTwo"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="New Text"
+            android:textColor="@color/blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barrierTwo">
+
+        </Button>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
