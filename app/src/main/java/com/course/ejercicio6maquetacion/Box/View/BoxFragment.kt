@@ -1,4 +1,4 @@
-package com.course.ejercicio6maquetacion.Box
+package com.course.ejercicio6maquetacion.Box.View
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,11 +9,11 @@ import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.course.ejercicio6maquetacion.Box.ViewModel.BoxViewModel
 import com.course.ejercicio6maquetacion.R
 import com.course.ejercicio6maquetacion.databinding.FragmentBoxBinding
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
-import java.text.NumberFormat
 import java.util.*
 
 class BoxFragment : Fragment() {
