@@ -14,7 +14,6 @@ class ParagraphViewModel : ViewModel() {
     val randomTextTwo: LiveData<String> get() = _randomTextTwo
 
     init {
-        // Inicializar con datos aleatorios
         generateRandomTexts()
     }
 
