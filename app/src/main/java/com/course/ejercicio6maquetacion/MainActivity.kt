@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pagerViewModel: UserViewModel
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -29,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         paragraphViewModel.randomTextTwo.observe(this) { randomText ->
             binding.tvTwo.text = randomText
         }
+
         pagerViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         val userAdapter = UserAdapter(pagerViewModel.userList)

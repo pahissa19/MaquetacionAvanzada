@@ -3,4 +3,8 @@
     <string name="my_aplication">My Aplication</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">Description:</string>
+    <string name="hobbies">Hobbies:</string>
+    <string name="sex">Sex:</string>
+    <string name="age">Age:</string>
 </resources>
