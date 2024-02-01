@@ -14,10 +14,10 @@ class ParagraphViewModel : ViewModel() {
     val randomTextTwo: LiveData<String> get() = _randomTextTwo
 
     init {
-        generateRandomTexts()
+        generateTexts()
     }
 
-    fun generateRandomTexts() {
+    private fun generateTexts() {
         _randomTextOne.value = generateRandomText()
         _randomTextTwo.value = generateRandomText()
     }

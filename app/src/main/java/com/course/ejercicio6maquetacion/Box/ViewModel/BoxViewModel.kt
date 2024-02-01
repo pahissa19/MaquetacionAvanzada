@@ -5,6 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.course.ejercicio6maquetacion.Box.Model.Element
 import com.course.ejercicio6maquetacion.R
+import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
+import java.util.Currency
+import java.util.Locale
 import kotlin.random.Random
 
 class BoxViewModel : ViewModel() {
@@ -21,7 +25,7 @@ class BoxViewModel : ViewModel() {
 
         repeat(Random.nextInt(3, 11)) {
             val randomText = generateRandomText()
-            val randomAmount = String.format("%.4f", Random.nextDouble(0.0, 10000.0)).toDouble()
+            val randomAmount = Random.nextDouble(0.0, 10000.0)
             val randomIcon = R.drawable.money
 
             dummyElements.add(Element(randomIcon, randomText, randomAmount ))

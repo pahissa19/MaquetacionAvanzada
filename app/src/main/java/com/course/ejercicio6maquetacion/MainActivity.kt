@@ -1,12 +1,16 @@
 package com.course.ejercicio6maquetacion
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
+import com.course.ejercicio6maquetacion.Box.View.BoxFragment
 import com.course.ejercicio6maquetacion.Pager.Adapter.UserAdapter
 import com.course.ejercicio6maquetacion.Pager.ViewModel.UserViewModel
 import com.course.ejercicio6maquetacion.Paragraph.ParagraphViewModel
 import com.course.ejercicio6maquetacion.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,19 +27,23 @@ class MainActivity : AppCompatActivity() {
         paragraphViewModel = ViewModelProvider(this).get(ParagraphViewModel::class.java)
         pagerViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
+
+        genFirstParagraph()
+        genLastParagraph()
+        newText()
+        createViewPager()
+    }
+
+    private fun genFirstParagraph() {
         paragraphViewModel.randomTextOne.observe(this) { randomText ->
             binding.tvOne.text = randomText
         }
         paragraphViewModel.randomTextTwo.observe(this) { randomText ->
             binding.tvTwo.text = randomText
         }
-
-        genLastParagraph()
-        newText()
-        createViewPager()
     }
 
-    private fun newText(){
+    private fun newText() {
         binding.btnRandom.setOnClickListener {
             val par1 = paragraphViewModel.generateRandomText()
             val par2 = paragraphViewModel.generateRandomText()
@@ -44,13 +52,19 @@ class MainActivity : AppCompatActivity() {
             binding.tvTwo.text = par2
         }
 
-        binding.btnRandomTwo.setOnClickListener{
-           genLastParagraph()
+        binding.btnRandomTwo.setOnClickListener {
+            genLastParagraph()
+        }
+
+        binding.reloadButton.setOnClickListener {
+            supportFragmentManager.commit {
+                replace(binding.fragmentContainerView.id, BoxFragment())
+            }
         }
 
     }
 
-    private fun genLastParagraph(){
+    private fun genLastParagraph() {
         val par50 = paragraphViewModel.generateRandomText()
         val par120 = paragraphViewModel.generateRandomText()
         val par70 = paragraphViewModel.generateRandomText()
@@ -60,7 +74,7 @@ class MainActivity : AppCompatActivity() {
         binding.paragraph3.text = par70
     }
 
-    private fun createViewPager(){
+    private fun createViewPager() {
         val userAdapter = UserAdapter(pagerViewModel.userList)
         binding.viewPager.adapter = userAdapter
     }
