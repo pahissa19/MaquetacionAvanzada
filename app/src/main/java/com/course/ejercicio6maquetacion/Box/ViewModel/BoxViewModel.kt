@@ -28,7 +28,7 @@ class BoxViewModel : ViewModel() {
             val randomAmount = Random.nextDouble(0.0, 10000.0)
             val randomIcon = R.drawable.money
 
-            dummyElements.add(Element(randomIcon, randomText, randomAmount ))
+            dummyElements.add(Element(randomIcon, randomText, randomAmount))
         }
 
         _elements.value = dummyElements

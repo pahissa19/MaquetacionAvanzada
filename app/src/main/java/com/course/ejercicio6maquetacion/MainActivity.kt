@@ -1,7 +1,6 @@
 package com.course.ejercicio6maquetacion
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
@@ -35,12 +34,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun genFirstParagraph() {
-        paragraphViewModel.randomTextOne.observe(this) { randomText ->
-            binding.tvOne.text = randomText
-        }
-        paragraphViewModel.randomTextTwo.observe(this) { randomText ->
-            binding.tvTwo.text = randomText
-        }
+        val par1 = paragraphViewModel.generateRandomText()
+        val par2 = paragraphViewModel.generateRandomText()
+
+        binding.tvOne.text = par1
+        binding.tvTwo.text = par2
     }
 
     private fun newText() {
