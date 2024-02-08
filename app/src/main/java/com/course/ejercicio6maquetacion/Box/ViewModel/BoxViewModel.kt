@@ -5,10 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.course.ejercicio6maquetacion.Box.Model.Element
 import com.course.ejercicio6maquetacion.R
-import java.text.DecimalFormat
-import java.text.DecimalFormatSymbols
-import java.util.Currency
-import java.util.Locale
 import kotlin.random.Random
 
 class BoxViewModel : ViewModel() {

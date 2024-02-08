@@ -25,23 +25,19 @@ class BoxFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_box, container, false)
+        binding = FragmentBoxBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(BoxViewModel::class.java)
 
-        // Observa los cambios en la lista de elementos y actualiza la interfaz de usuario
         viewModel.elements.observe(viewLifecycleOwner) { elements ->
             binding.boxContainer.removeAllViews()
 
-            // Iterar a través de los elementos y agregar vistas al contenedor
             for (element in elements) {
                 val elementView = inflater.inflate(R.layout.item_element, binding.boxContainer, false)
 
-                // Obtener referencias a las vistas del elemento
                 val iconImageView = elementView.findViewById<ImageView>(R.id.iconImageView)
                 val textTextView = elementView.findViewById<TextView>(R.id.textTextView)
                 val amountTextView = elementView.findViewById<TextView>(R.id.amountTextView)
 
-                // Asignar valores a las vistas del elemento
                 iconImageView.setImageResource(element.icon)
                 textTextView.text = element.text
                 amountTextView.text = formatCurrency(element.amount)
